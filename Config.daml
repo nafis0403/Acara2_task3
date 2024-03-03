@@ -1,0 +1,45 @@
+﻿<ArcGIS defaultAssembly="Task_3.dll" defaultNamespace="Task_3" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{93108456-494c-4d00-97e6-89d4a0baec42}" version="1.0" desktopVersion="2.8.29751">
+    <Name>Task_3</Name>
+    <Description>Task_3 description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>azkaa</Author>
+    <Company>Acme</Company>
+    <Date>2/26/2024 10:37:32 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Task_3_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="Task_3_Tab1" caption="New Tab">
+          <group refID="Task_3_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Task_3_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <tool refID="Task_3_MapTool1" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+		  <tool id="Task_3_MapTool1"
+         caption="Identify Features"
+         className="MapTool1"
+         loadOnClick="true"
+         smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
+         largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
+         condition="esri_mapping_mapPane">
+			  <tooltip heading="Identify Features">
+				  Identify features on the current map using a circular sketch.<disabledText />
+			  </tooltip>
+		  </tool>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>
